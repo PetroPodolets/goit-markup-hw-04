@@ -88,16 +88,35 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
-.page-link:hover {
-    color: #404BBF;
-}
-
+.page-link:hover,
 .page-link:focus,
 .contacts:focus {
     color: #404BBF;
+
 }
+
+
+.studio {
+    color: #404BBF
+}
+
+.studio::after {
+    content: "";
+    border-radius: 2px;
+    width: 48px;
+    height: 4px;
+    background: #404BBF;
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+}
+
+
+
 
 .header-menu,
 .address-contacts {
@@ -142,11 +161,16 @@ nav {
 /* section-one */
 
 .section-one {
-    background: #2E2F42;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/section-one-img.jpg);
     text-align: center;
     flex-shrink: 0;
     padding: 188px 0;
-
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -178,11 +202,13 @@ h1 {
     border-radius: 4px;
     height: 56px;
     min-width: 169px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .one-button:hover,
 .one-button:focus {
     background-color: #404BBF;
+
 }
 
 
@@ -237,6 +263,7 @@ h1 {
 
 .section-two-title {
     margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 .section-two-text,
@@ -266,6 +293,19 @@ h1 {
     border-radius: 0px 0px 4px 4px;
 }
 
+
+
+.section-two-svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 112px;
+    background-color: #F4F4FD;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+
+}
+
 /* section-three  */
 
 .section-three {
@@ -280,7 +320,7 @@ h1 {
 
 .section-three-text {
     text-align: center;
-
+    margin-bottom: 8px;
 }
 
 .section-three-list {
@@ -304,6 +344,30 @@ h1 {
     gap: 24px;
 }
 
+.section-social {
+    display: flex;
+    justify-content: center;
+    column-gap: 24px;
+}
+
+.li-social {
+    background-color: #4D5AE5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.li-social:hover,
+.li-social:focus {
+    background-color: #404BBF;
+}
+
 /* section-four  */
 
 
@@ -320,7 +384,10 @@ h1 {
 
 .section-four-list {
     width: calc((100% - 48px) / 3);
+
 }
+
+
 
 .four-info {
     padding: 32px 16px;
@@ -331,11 +398,64 @@ h1 {
 
 
 
+
+
+.gallery-item {
+
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.overlay {
+    padding: 40px 32px 0 32px;
+
+
+    background-color: #4D5AE5;
+    color: #fff;
+    font-family: sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms ease-in-out;
+    color: #F4F4FD;
+
+    /* Body */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+
+/* .gallery-item:hover .overlay {
+    
+} */
+
+.section-four-list:hover .gallery-item .overlay {
+    transform: translateY(0);
+}
+
+
+.section-four-list:hover .four-info {
+    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+
+    background: #FFF;
+}
+
+
+
 /* footer  */
 
 .page-footer {
     background-color: #2E2F42;
-    display: flex;
     padding: 100px 0;
 }
 
@@ -363,4 +483,53 @@ h1 {
     letter-spacing: 0.02em;
     width: 264px;
 
+}
+
+
+
+.social-media {
+    color: #FFF;
+
+    /* Body Medium */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.15;
+    /* 150% */
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+
+}
+
+
+.page-footer>.container {
+    display: flex;
+
+}
+
+.social-container {
+    margin-left: 120px;
+}
+
+.section-social-footer {
+    display: flex;
+    column-gap: 16px;
+}
+
+.li-social-footer {
+    background-color: #4D5AE5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.li-social-footer:hover {
+    background-color: #31D0AA;
 }
