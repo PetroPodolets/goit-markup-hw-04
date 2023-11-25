@@ -52,6 +52,7 @@ body {
 .page-header {
     flex-shrink: 0;
     border-bottom: 1px solid #E7E9FC;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header {
@@ -101,7 +102,8 @@ body {
 
 
 .studio {
-    color: #404BBF
+    color: #404BBF;
+    position: relative;
 }
 
 .studio::after {
@@ -113,6 +115,8 @@ body {
     display: block;
     position: absolute;
     margin-top: 20px;
+    left: 0;
+    bottom: -1px;
 }
 
 
@@ -148,6 +152,7 @@ nav {
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts:hover {
@@ -214,6 +219,8 @@ h1 {
 
 
 /* section-two  */
+
+
 .title-section {
     color: #2E2F42;
     font-family: 'Roboto';
@@ -303,6 +310,7 @@ h1 {
     background-color: #F4F4FD;
     border: 1px solid #8E8F99;
     border-radius: 4px;
+    margin-bottom: 8px;
 
 }
 
@@ -331,6 +339,9 @@ h1 {
     align-items: center;
     gap: 32px;
     border-radius: 0px 0px 4px 4px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
 
 }
 
@@ -339,7 +350,6 @@ h1 {
 }
 
 .section-three-lists {
-
     display: flex;
     gap: 24px;
 }
@@ -347,7 +357,7 @@ h1 {
 .section-social {
     display: flex;
     justify-content: center;
-    column-gap: 24px;
+
 }
 
 .li-social {
@@ -361,6 +371,8 @@ h1 {
     line-height: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    gap: 24px;
+    background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .li-social:hover,
@@ -380,6 +392,8 @@ h1 {
     gap: 24px;
     row-gap: 48px;
     margin-top: 72px;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0%);
 }
 
 .section-four-list {
@@ -434,19 +448,15 @@ h1 {
     letter-spacing: 0.02em;
 }
 
-
-/* .gallery-item:hover .overlay {
-    
-} */
-
 .section-four-list:hover .gallery-item .overlay {
     transform: translateY(0);
 }
 
 
 .section-four-list:hover .four-info {
-    box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 2px 1px rgba(46, 47, 66, 0.08);
     background: #FFF;
 }
 
